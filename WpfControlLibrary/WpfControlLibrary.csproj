@@ -1,10 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>10.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <Platforms>x64;x86;Any CPU</Platforms>
+    <RootNamespace>WpfControl</RootNamespace>
+    <TargetFrameworks>net48;</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platforms>x64;86;Any CPU</Platforms>
+    <Platforms>x64;x86;Any CPU</Platforms>
     <ProjectGuid>{294ebec5-2417-48f2-8a34-eb26508e4163}</ProjectGuid>
     <OutputType>library</OutputType>
     <RootNamespace>WpfControlLibrary</RootNamespace>
@@ -71,21 +81,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Page Include="UserControl1.xaml">
-       <Generator>MSBuild:Compile</Generator>
-       <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="UserControl1.xaml.cs">
-      <DependentUpon>UserControl1.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="UserControl1.xaml.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,16 +97,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
 
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
